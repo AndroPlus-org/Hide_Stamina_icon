@@ -2,6 +2,7 @@ package com.wedy.semcphone2;
 
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.XC_MethodReplacement;
+import de.robv.android.xposed.XposedBridge;
 import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;
 
@@ -22,7 +23,7 @@ public class NotificationiconPatcher implements IXposedHookLoadPackage {
 					XC_MethodReplacement.DO_NOTHING
 			);
 		} catch (Throwable t) {
-			
+			XposedBridge.log(t.getMessage());
 		}
 
 	};
